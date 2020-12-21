@@ -1,0 +1,23 @@
+<!-- <div><label>ID: </label>{{ejercicio.id}}</div>
+<div><label>Nombre: </label>{{ejercicio.name | uppercase}}</div>
+<div><label for="">Nombre:
+  <input type="text" [(ngModel)]="ejercicio.name">
+</label></div>-->
+
+<h2>Listado de Ejercicios</h2>
+
+<ul class="ejercicios">
+
+  <li *ngFor="let ejercicio of ejercicios" (click)="onSelectEjercicio(ejercicio)" [class.selected]="ejercicio.name===ejercicioSel">
+    <span  class="badge">{{ejercicio.id}}</span>{{ejercicio.name}}
+  </li>
+
+</ul>
+
+<h2>Ejercicios Seleccionados</h2>
+<div *ngFor="let ejercicioSelec of ejercicioSeleccionado">
+  <span>{{ejercicioSelec}}</span>
+</div>
+
+
+
